@@ -8,4 +8,8 @@ COPY requirements.txt .
 
 RUN pip install -r requirements.txt
 
+COPY . .
+RUN sudo chown -R vscode:vscode /app
+RUN git config --global --add safe.directory /app
+
 CMD ["tail", "-f", "/dev/null"]

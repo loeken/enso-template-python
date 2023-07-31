@@ -1,7 +1,7 @@
 {
     "name": "myapp",
     "dockerComposeFile": "../docker-compose.yml",
-    "service": "app",
+    "service": "myapp",
     "workspaceFolder": "/app",
 	"forwardPorts": [8080],
     "customizations": {
@@ -19,9 +19,9 @@
 				"nhoizey.gremlins",
 				"oderwat.indent-rainbow",
 				"rangav.vscode-thunder-client",
-				
 				"github.vscode-github-actions",
-				"ms-vscode-remote.remote-ssh"
+				"ms-vscode-remote.remote-ssh",
+				"ms-python.python"
 			]
         }
     }
