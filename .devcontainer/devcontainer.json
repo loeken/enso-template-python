@@ -1,0 +1,18 @@
+{
+    "name": "enso-template-python",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/app",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode-remote.vscode-remote-extensionpack",
+                "ms-vscode-remote.remote-containers",
+                "github.codespaces",
+                "github.vscode-pull-request-github",
+                "editorconfig.editorconfig",
+                "rangav.vscode-thunder-client"
+            ]
+        }
+    }
+}
