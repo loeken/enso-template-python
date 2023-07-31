@@ -22,7 +22,10 @@
 				"github.vscode-github-actions",
 				"ms-vscode-remote.remote-ssh",
 				"ms-python.python"
-			]
+			],
+			"settings": { 
+                "python.pythonPath": "/usr/local/bin/python3"
+            }
         }
     }
 }
