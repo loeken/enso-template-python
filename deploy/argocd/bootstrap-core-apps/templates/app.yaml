@@ -4,6 +4,8 @@ kind: Application
 metadata:
   name: {{ .Values.githubUser }}-{{ .Values.githubRepo }}
   namespace: argocd
+  annotations:
+    author: {{ .Values.email }}
 spec:
   project: default
   source:
@@ -12,32 +14,13 @@ spec:
     targetRevision: HEAD
     helm:
       values: |
-        githubUser: {{ .Values.githubUser }}
-        githubRepo: {{ .Values.githubRepo }}
-        # image:
-        #   tag: 1.0.0
-        # controller:
-        #   replicas: 2
-        # ingress:
-        #   main:
-        #     annotations:
-        #       kubernetes.io/ingress.class: "nginx"
-        #       cert-manager.io/cluster-issuer: "letsencrypt-prod"
-        #       external-dns.alpha.kubernetes.io/hostname: "enso.loeken.xyz."
-        #       external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-        #       external-dns.alpha.kubernetes.io/ttl: "120"
-        #     enabled: true
-        #     hosts:
-        #       - host: enso.loeken.xyz
-        #         paths:
-        #           - path: /
-        #             pathType: Prefix
-        #             service:
-        #               port: 80
-        #     tls:
-        #     - secretName: enso-frontend-tls
-        #       hosts:
-        #         - enso.loeken.xyz
+        image:
+          repository: user/repo
+        service:
+          main:
+            ports:
+              http:
+                port: 8080
   destination:
     namespace: {{ .Values.githubUser }}_{{ .Values.githubRepo }}
     server: https://kubernetes.default.svc
